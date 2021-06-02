@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AppointmentManagerCapstone.Models.PrivateCustomerAppointment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Customer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedByUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentStart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentEnd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedByUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppointmentEnd)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

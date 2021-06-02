@@ -1,0 +1,47 @@
+﻿
+@model IEnumerable<AppointmentManagerCapstone.Models.PrivateCustomerAppointment>
+
+@{
+    ViewData["Title"] = "Future Private Custeomr Appointments";
+}
+
+
+<h2>Future Business Appointments</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">
+                Appointment Name
+            </th>
+            <th scope="col">
+                Appointment Start
+            </th>
+            <th scope="col">
+                Appointment End
+            </th>
+            <th scope="col">
+                Customer
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentEnd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.CustomerName)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

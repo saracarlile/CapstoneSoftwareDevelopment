@@ -1,0 +1,72 @@
+﻿@model AppointmentManagerCapstone.Models.PrivateCustomerAppointment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Private Customer Appointment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="MobileSetupPackage" /> @Html.DisplayNameFor(model => model.MobileSetupPackage)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="KidsSafeMediaPackage" /> @Html.DisplayNameFor(model => model.KidsSafeMediaPackage)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="WorkgroupSetupPackage" /> @Html.DisplayNameFor(model => model.WorkgroupSetupPackage)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerID" class="control-label"></label>
+                <select asp-for="CustomerID" class ="form-control" asp-items="ViewBag.CustomerID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedByUser" class="control-label"></label>
+                <input class="form-control" asp-for="CreatedByUser" value="@User.Identity.Name" readonly />
+                <span asp-validation-for="CreatedByUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentName" class="control-label"></label>
+                <input asp-for="AppointmentName" class="form-control" />
+                <span asp-validation-for="AppointmentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentNotes" class="control-label"></label>
+                <input asp-for="AppointmentNotes" class="form-control" />
+                <span asp-validation-for="AppointmentNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentStart" class="control-label"></label>
+                <input asp-for="AppointmentStart" class="form-control" />
+                <span asp-validation-for="AppointmentStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentEnd" class="control-label"></label>
+                <input asp-for="AppointmentEnd" class="form-control" />
+                <span asp-validation-for="AppointmentEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
