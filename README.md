@@ -1,11 +1,11 @@
-####The graduate integrates and synthesizes competencies from across the degree program, thereby demonstrating the ability to participate in and contribute value to the chosen professional field.
+#### The graduate integrates and synthesizes competencies from across the degree program, thereby demonstrating the ability to participate in and contribute value to the chosen professional field.
 
 # Lone Star Appointment Tracker - Capstone Project
 The Lone Star Appointment Tracker is a web application I built
 for a fictional IT consultant group to help track and manage their 
 customers appointments
 
-##Technology
+## Technology
 The web app is built using the following:
 
 * ASP.NET CORE 5.0
@@ -16,7 +16,7 @@ The web app is built using the following:
 * Azure App Service
 
 
-##Project Requirements
+## Project Requirements
 ### Design and develop a fully functional software application that addresses your identified business problem
 
 * code including inheritance, polymorphism, and encapsulation
